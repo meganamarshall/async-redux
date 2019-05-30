@@ -1,12 +1,17 @@
 import avatar from '../../assets/airbender.jpeg';
-export const getCharacters = () => {
-  return fetch('https://last-airbender-api.herokuapp.com/api/v1/characters')
+
+const get = url => {
+  return fetch(url)
     .then(res => ([res.ok, res.json()]))
     .then(([ok, json]) => {
       if(!ok) throw 'Unable to fetch Characters';
 
       return json;
-    })
+    });
+};
+
+export const getCharacters = () => {
+  return get('https://last-airbender-api.herokuapp.com/api/v1/characters')
     .then(json => {
       return json.map(character => ({
         id: character._id,
