@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getCharacters, getCharactersLoading, getCharactersError } from '../selectors/charactersSelectors';
+import { getAllCharacters, getCharactersLoading, getCharactersError } from '../selectors/charactersSelectors';
 import { fetchCharacters } from '../actions/characterActions';
 import Characters from '../components/characters/Characters';
 
@@ -24,7 +24,7 @@ class AllCharacters extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  characters: getCharacters(state),
+  characters: getAllCharacters(state),
   loading: getCharactersLoading(state),
   error: getCharactersError(state)
 });

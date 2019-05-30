@@ -1,4 +1,4 @@
-export default function getCharacters() {
+export const getCharacters = () => {
   return fetch('https://last-airbender-api.herokuapp.com/api/v1/characters')
     .then(res => ([res.ok, res.json()]))
     .then(([ok, json]) => {
@@ -11,6 +11,6 @@ export default function getCharacters() {
         id: character._id,
         name: character.name,
         image: character.photoUrl
-      }))
-    })
-}
+      }));
+    });
+};
