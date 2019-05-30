@@ -12,6 +12,7 @@ export const fetchCharacters = () => dispatch => {
 
   return getCharacters() 
     .then(character => {
+      console.log(character);
       dispatch({
         type: FETCH_CHARACTERS,
         payload: character
