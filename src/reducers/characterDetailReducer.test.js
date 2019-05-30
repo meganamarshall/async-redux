@@ -1,6 +1,5 @@
 import reducer from './characterDetailReducer';
 import { FETCH_CHARACTER, FETCH_CHARACTER_LOADING, FETCH_CHARACTER_ERROR } from '../actions/characterDetailActions';
-import { exportAllDeclaration } from '@babel/types';
 
 describe('character detail reducer', () => {
   it('handles the fetch character action', () => {
