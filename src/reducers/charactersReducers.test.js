@@ -18,4 +18,35 @@ describe('characters reducer', () => {
       error: null
     });
   });
+  it('handles the fetch characters loading action', () => {
+    const initialState = {
+      loading: false,
+      list: [],
+      error: null
+    };
+    const newState = reducer(initialState, {
+      type: FETCH_CHARACTERS_LOADING
+    });
+    expect(newState).toEqual({
+      loading: true,
+      list: [],
+      error: null
+    });
+  });
+  it('handles the fetch characters error action', () => {
+    const initialState = {
+      loading: false,
+      list: [],
+      error: null
+    };
+    const newState = reducer(initialState, {
+      type: FETCH_CHARACTERS_ERROR,
+      payload: 'error!!'
+    });
+    expect(newState).toEqual({
+      loading: false,
+      list: [],
+      error: 'error!!'
+    });
+  });
 });
