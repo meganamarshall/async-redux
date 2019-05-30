@@ -1,9 +1,9 @@
 import { createAction } from 'promise-middleware-redux';
-import { getCharacter } from '../services/airbenderApi';
+import { getOneCharacter } from '../services/airbenderApi';
 
 export const [
   fetchCharacter,
   FETCH_CHARACTER,
   FETCH_CHARACTER_LOADING,
   FETCH_CHARACTER_ERROR
-] = createAction('FETCH_CHARACTER', getCharacter);
+] = createAction('FETCH_CHARACTER', getOneCharacter);

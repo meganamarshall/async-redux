@@ -21,10 +21,15 @@ export const getCharacters = () => {
     });
 };
 
-export const getCharacter = character => {
-  return get(`https://last-airbender-api.herokuapp.com/api/v1/characters/${character.id}`)
-    .then(json => {
-      console.log(json);
-      return json;
-    });
+export const getOneCharacter = id => {
+  console.log(id);
+  return get(`https://last-airbender-api.herokuapp.com/api/v1/characters/${id}`)
+    .then(json => ({
+      id: json._id,
+      name: json.name,
+      position: json.position,
+      image: json.image,
+      weapon: json.weapon,
+      affiliation: json.affiliation
+    }));
 };

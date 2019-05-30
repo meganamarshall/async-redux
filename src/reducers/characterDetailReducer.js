@@ -2,7 +2,7 @@ import { FETCH_CHARACTER, FETCH_CHARACTER_ERROR, FETCH_CHARACTER_LOADING } from 
 
 const initialState = {
   loading: false,
-  character: {},
+  character: null,
   error: null
 };
 

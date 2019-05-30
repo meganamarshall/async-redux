@@ -8,7 +8,14 @@ import CharacterDetail from '../components/characters/CharacterDetail';
 class CharacterDetailPage extends PureComponent {
   static propTypes = {
     fetch: PropTypes.func.isRequired,
-    character: PropTypes.object.isRequired,
+    character: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      affiliation: PropTypes.string.isRequired,
+      position: PropTypes.string.isRequired,
+      weapon: PropTypes.string.isRequired
+    }),
     loading: PropTypes.bool.isRequired,
     error: PropTypes.object.isRequired
   }
@@ -29,9 +36,9 @@ const mapStateToProps = state => ({
   error: getCharacterError(state)
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, props) => ({
   fetch() {
-    dispatch(fetchCharacter());
+    dispatch(fetchCharacter(props.match.params.id));
   }
 });
 
