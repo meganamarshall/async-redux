@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Character({ character }) {
   return (
-    <section>
+    <Link to={`/`}>
       <img src={character.image} />
       <p>{character.name}</p>
     </section>
