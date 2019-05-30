@@ -5,7 +5,7 @@ import {
   Route
 } from 'react-router-dom';
 import AllCharacters from '../containers/AllCharacters';
-import CharacterDetail from '../components/characters/CharacterDetail';
+import CharacterDetailPage from '../containers/CharacterDetailPage';
 
 export default function App() {
   return (
@@ -13,7 +13,7 @@ export default function App() {
       <h1>I HAVE NEVER SEEN THIS MOVIE</h1>
       <Switch>
         <Route exact path="/" component={AllCharacters} />
-        <Route path="/:id" component={CharacterDetail} />
+        <Route path="/:id" component={CharacterDetailPage} />
       </Switch>
     </Router>
   );
