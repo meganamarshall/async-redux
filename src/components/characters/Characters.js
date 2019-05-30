@@ -4,8 +4,8 @@ import Character from './Character';
 import styles from './Characters.css';
 
 function Characters({ characters }) {
-  const characterList = characters.map((character, i) => (
-    <li key={i}>
+  const characterList = characters.map(character => (
+    <li key={character.id}>
       <Character character={character} />
     </li>
   ));
@@ -18,7 +18,11 @@ function Characters({ characters }) {
 }
 
 Characters.propTypes = {
-  characters: PropTypes.array.isRequired
+  characters: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired
+  })).isRequired
 };
 
 export default Characters;

@@ -16,7 +16,7 @@ Character.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired
-  })
+  }).isRequired
 };
 
 export default Character;

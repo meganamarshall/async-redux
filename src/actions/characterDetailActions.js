@@ -4,6 +4,5 @@ import { getOneCharacter } from '../services/airbenderApi';
 export const [
   fetchCharacter,
   FETCH_CHARACTER,
-  FETCH_CHARACTER_LOADING,
-  FETCH_CHARACTER_ERROR
+  FETCH_CHARACTER_LOADING
 ] = createAction('FETCH_CHARACTER', getOneCharacter);

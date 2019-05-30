@@ -1,7 +1,7 @@
-import { FETCH_CHARACTER, FETCH_CHARACTER_ERROR, FETCH_CHARACTER_LOADING } from '../actions/characterDetailActions';
+import { FETCH_CHARACTER, FETCH_CHARACTER_LOADING } from '../actions/characterDetailActions';
 
 const initialState = {
-  loading: false,
+  loading: true,
   character: null,
   error: null
 };
@@ -11,9 +11,7 @@ export default function reducer(state = initialState, action) {
     case FETCH_CHARACTER_LOADING:
       return { ...state, loading: true };
     case FETCH_CHARACTER:
-      return { ...state, error: null, loading: false, character: action.payload };
-    case FETCH_CHARACTER_ERROR:
-      return { ...state, error: action.payload, loading: false };
+      return { ...initialState, error: null, loading: false, character: action.payload };
     default: 
       return state;
   }
