@@ -28,7 +28,7 @@ export const getOneCharacter = id => {
       id: json._id,
       name: json.name,
       position: json.position,
-      image: json.image,
+      image: json.photoUrl,
       weapon: json.weapon,
       affiliation: json.affiliation
     }));
