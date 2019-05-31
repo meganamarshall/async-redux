@@ -5,10 +5,10 @@ function CharacterDetail({ character }) {
   return (
     <section>
       <img src={character.image} />
-      <p>{character.name}</p>
-      <p>{character.affiliation}</p>
-      <p>{character.position}</p>
-      <p>{character.weapon}</p>
+      <p>Name: {character.name}</p>
+      <p>Affiliation: {character.affiliation}</p>
+      <p>Position: {character.position}</p>
+      <p>Weapon: {character.weapon || 'NA'}</p>
     </section>
   );
 }

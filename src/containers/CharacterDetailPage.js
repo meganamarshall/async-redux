@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getCharacter, getCharacterLoading, getCharacterError } from '../selectors/characterSelectors';
+import { getCharacter, getCharacterLoading } from '../selectors/characterSelectors';
 import { fetchCharacter } from '../actions/characterDetailActions';
 import CharacterDetail from '../components/characters/CharacterDetail';
 
@@ -32,8 +32,7 @@ class CharacterDetailPage extends PureComponent {
 
 const mapStateToProps = state => ({
   character: getCharacter(state),
-  loading: getCharacterLoading(state),
-  error: getCharacterError(state)
+  loading: getCharacterLoading(state)
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
