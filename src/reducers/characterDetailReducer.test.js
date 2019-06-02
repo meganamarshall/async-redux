@@ -5,8 +5,7 @@ describe('character detail reducer', () => {
   it('handles the fetch character action', () => {
     const initialState = {
       loading: false,
-      character: {},
-      error: null
+      character: {}
     };
 
     const newState = reducer(initialState, {
@@ -16,24 +15,21 @@ describe('character detail reducer', () => {
 
     expect(newState).toEqual({
       loading: false,
-      character: { name: 'megan', affiliation: 'acl' },
-      error: null
+      character: { name: 'megan', affiliation: 'acl' }
     });
   });
 
   it('handles the fetch character loading action', () => {
     const initialState = {
       loading: false,
-      character: {},
-      error: null
+      character: {}
     };
     const newState = reducer(initialState, {
       type: FETCH_CHARACTER_LOADING
     });
     expect(newState).toEqual({
       loading: true,
-      character: {},
-      error: null
+      character: {}
     });
   });
 });

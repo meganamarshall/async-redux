@@ -16,8 +16,7 @@ class CharacterDetailPage extends PureComponent {
       position: PropTypes.string.isRequired,
       weapon: PropTypes.string.isRequired
     }),
-    loading: PropTypes.bool.isRequired,
-    error: PropTypes.object.isRequired
+    loading: PropTypes.bool.isRequired
   }
 
   componentDidMount() {
@@ -30,10 +29,12 @@ class CharacterDetailPage extends PureComponent {
   }
 }
 
-const mapStateToProps = state => ({
-  character: getCharacter(state),
-  loading: getCharacterLoading(state)
-});
+const mapStateToProps = state => {
+  console.log(getCharacter(state), 'hello in state to props');
+  return {
+    character: getCharacter(state),
+    loading: getCharacterLoading(state)
+  };};
 
 const mapDispatchToProps = (dispatch, props) => ({
   fetch() {
